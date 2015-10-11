@@ -22,10 +22,23 @@ def redmatter():
     response.headers['Access-Control-Allow-Origin']= '*'
     return response
 
+@app.route('/world')
+def world():
+    d = world_queries.total_pop()
+    return render_response(d)
+
 @app.route('/world/tiles/<x>/<y>', methods=['GET'])
 def pops(x=None ,y=None):
     d = world_queries.tile_query(int(x), int(y))
-    response=make_response(str(d), 200)
+    return render_response(d)
+
+@app.route('/world/map/pops', methods=['GET'])
+def pop_map():
+    s = str(world_queries.pop_map())
+    return render_response(s)
+
+def render_response(mystring):
+    response=make_response(str(mystring), 200)
     response.headers['Content-Type'] = 'application/json'
     response.headers['Access-Control-Allow-Origin']= '*'
     return response

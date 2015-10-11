@@ -11,3 +11,4 @@ class Tile:
         self.x = x
         self.y = y
         self.pop = pop.Pop()
+        
