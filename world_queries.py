@@ -22,6 +22,20 @@ def pop_map():
         a.append(s)
     return a
 
+def money_per_capita_map():
+    a = []
+    w = gamelogic.data['world']
+    for x in w.map:
+        s = []
+        for y in x:
+            if y.pop.n > 0:
+                q = y.pop.money / y.pop.n
+            else:
+                q=0
+            s.append(q)
+        a.append(s)
+    return a
+
 def total_pop():
     n = 0
     for x in gamelogic.data['world'].map:

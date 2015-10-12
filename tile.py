@@ -10,6 +10,8 @@ class Tile:
         self.productivity = []
         for i in range(0, settings.resources_n):
             self.productivity.append(random.random())
+        self.productivity[1] = 1.0 #HOUSING
+        self.productivity[2] = 1.0 #LABOR
         self.x = x
         self.y = y
         self.pop = pop.Pop()
@@ -19,6 +21,8 @@ class Tile:
         self.max_size = 100
         self.births = 0
         self.deaths = 0
+        self.imports = 0
+        self.exports = 0
 
     def produce(self):
         for n, x in enumerate(self.productivity):
@@ -47,6 +51,7 @@ class Tile:
             if newprice < 0:
                 newprice = 0.01
             self.prices[i] = newprice
+        self.change_in_supply = [0] * settings.resources_n #reset so we can use this method again
 
     def grow_die(self):
         self.births = 0

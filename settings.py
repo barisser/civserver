@@ -18,3 +18,6 @@ flow_of_money = 0.01  #flow rate, fraction of money spent per interval
 migration_coefficient = 0.1
 migration_range = 2
 migration_randomness = 1.0
+
+trade_range = 1
+trade_fraction = 0.5

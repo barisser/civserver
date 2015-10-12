@@ -37,6 +37,11 @@ def pop_map():
     s = str(world_queries.pop_map())
     return render_response(s)
 
+@app.route('/world/map/money', methods=['GET'])
+def moneymp():
+    s = str(world_queries.money_per_capita_map())
+    return render_response(s)
+
 def render_response(mystring):
     response=make_response(str(mystring), 200)
     response.headers['Content-Type'] = 'application/json'
