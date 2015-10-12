@@ -18,10 +18,10 @@ def main_loop():
             main_thread(queue, data, last_iteration)
             data, last_iteration = background_thread(data, last_iteration)
             last_tick = time.time()
-            print data
-            print ""
+            
 
 def background_thread(data, last_iteration):
+    data['world'].cycle()
     return data, last_iteration
 
 def main_thread(queue, data, last_iteration):
