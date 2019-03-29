@@ -1,6 +1,7 @@
 import commodities
 import world
 
+
 def init():
     data = {}
     data['world'] = world.World()
