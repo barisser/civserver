@@ -6,6 +6,7 @@ queue = []
 responses = []
 data = gamedata.init()
 
+
 def main_loop():
     global queue
     global data
@@ -24,6 +25,7 @@ def background_thread(data, last_iteration):
     data['world'].cycle()
     return data, last_iteration
 
+
 def main_thread(queue, data, last_iteration):
     new_queue = queue
     for i in range(0, len(queue)):
@@ -36,8 +38,10 @@ def main_thread(queue, data, last_iteration):
             break
     return data, new_queue
 
+
 def decide_iterate_or_loop(item, last_iteration):
     return True
+
 
 def process_event(item, data):
     global responses #add something to responses
