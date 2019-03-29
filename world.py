@@ -3,6 +3,7 @@ import settings
 import tile
 import world_queries
 
+
 class World:
     def __init__(self):
         self.map = []
