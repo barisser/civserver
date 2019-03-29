@@ -4,12 +4,14 @@ import json
 import jsonpickle
 import settings
 
+
 def tile_query(x, y):
     x = int(x)
     y = int(y)
     t = gamelogic.data['world'].map[x][y]
     tjson = json.loads(jsonpickle.encode(t))
     return tjson
+
 
 def pop_map():
     a = []
@@ -21,6 +23,7 @@ def pop_map():
             s.append(q)
         a.append(s)
     return a
+
 
 def money_per_capita_map():
     a = []
@@ -35,6 +38,7 @@ def money_per_capita_map():
             s.append(q)
         a.append(s)
     return a
+
 
 def total_pop():
     n = 0
