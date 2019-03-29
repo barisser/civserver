@@ -2,6 +2,7 @@ import commodities
 import math
 import settings
 
+
 def calculate_standard_of_living(pop_object):
     s = 0
     for x in pop_object.consumption:
