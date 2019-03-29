@@ -2,6 +2,7 @@ import json
 import random
 import settings
 
+
 class Pop:
     def __init__(self):
         self.n = float(random.randint(0, settings.average_pop_per_tile*2))
