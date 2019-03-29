@@ -3,11 +3,14 @@ import threading
 import gamelogic
 import server
 
+
 def server_process():
     server.serve()
 
+
 def events_process():
     gamelogic.main_loop()
+
 
 def run():
     server_thread = threading.Thread(target=server_process)
