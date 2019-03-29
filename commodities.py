@@ -1,5 +1,6 @@
 commodities = []
 
+
 class Commodity:
     def __init__(self, name, storeable, tradeable, living_weight, base_demand, price_responsiveness, consumption_price_halflife):
         self.name = name
