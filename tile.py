@@ -5,6 +5,7 @@ import random
 import settings
 import pop
 
+
 class Tile:
     def __init__(self, x, y):
         self.productivity = []
