@@ -11,7 +11,7 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 
 @app.route('/')
 def respond_to_index():
-    response = make_response("Hi this is a random number " + str(random.randint(0,1000)), 200)
+    response = make_response("Hi this is a random number " + str(random.randint(0, 1000)), 200)
     response.headers['Access-Control-Allow-Origin']= '*'
     return response
 
@@ -28,7 +28,7 @@ def world():
     return render_response(d)
 
 @app.route('/world/tiles/<x>/<y>', methods=['GET'])
-def pops(x=None ,y=None):
+def pops(x=None , y=None):
     d = world_queries.tile_query(int(x), int(y))
     return render_response(d)
 
